@@ -1,0 +1,105 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.09.05",
+  "_id": "IiWmb6ABha0DJPFenMp-",
+  "_score": 1,
+  "_source": {
+    "agent": {
+      "ip": "192.168.0.103",
+      "name": "ACER44",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "wsl.exe",
+          "image": "C:\\\\Windows\\\\System32\\\\wsl.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{aa922433-8ef8-6a9b-5215-000000005200}",
+          "description": "Windows Subsystem for Linux",
+          "logonGuid": "{aa922433-7a80-6a9b-5994-f80200000000}",
+          "parentCommandLine": "C:\\\\WINDOWS\\\\system32\\\\cmd.exe /d /s /c \\\"wsl.exe -l -q\\\"",
+          "processGuid": "{aa922433-8ef8-6a9b-5415-000000005200}",
+          "logonId": "0x2f89459",
+          "parentProcessId": "2148",
+          "processId": "25992",
+          "currentDirectory": "C:\\\\Users\\\\Umar-Farook\\\\AppData\\\\Local\\\\Programs\\\\Microsoft VS Code\\\\",
+          "utcTime": "2026-09-05 03:39:36.272",
+          "hashes": "MD5=5816D5DA46812F8200BCA40F913D1471,SHA256=27CC8DD52BE326E138A89F8889241B1D8C51DD1978B22EB70BE77036CCDEE3C2,IMPHASH=0089B7DD61ACCD36576E8F26A1D746D7",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "wsl.exe  -l -q",
+          "integrityLevel": "Medium",
+          "fileVersion": "10.0.26100.9278 (WinBuild.160101.0800)",
+          "user": "ACER44\\\\Umar-Farook",
+          "terminalSessionId": "2",
+          "parentUser": "ACER44\\\\Umar-Farook"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-09-05 03:39:36.272\r\nProcessGuid: {aa922433-8ef8-6a9b-5415-000000005200}\r\nProcessId: 25992\r\nImage: C:\\Windows\\System32\\wsl.exe\r\nFileVersion: 10.0.26100.9278 (WinBuild.160101.0800)\r\nDescription: Windows Subsystem for Linux\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: wsl.exe\r\nCommandLine: wsl.exe  -l -q\r\nCurrentDirectory: C:\\Users\\Umar-Farook\\AppData\\Local\\Programs\\Microsoft VS Code\\\r\nUser: ACER44\\Umar-Farook\r\nLogonGuid: {aa922433-7a80-6a9b-5994-f80200000000}\r\nLogonId: 0x2F89459\r\nTerminalSessionId: 2\r\nIntegrityLevel: Medium\r\nHashes: MD5=5816D5DA46812F8200BCA40F913D1471,SHA256=27CC8DD52BE326E138A89F8889241B1D8C51DD1978B22EB70BE77036CCDEE3C2,IMPHASH=0089B7DD61ACCD36576E8F26A1D746D7\r\nParentProcessGuid: {aa922433-8ef8-6a9b-5215-000000005200}\r\nParentProcessId: 2148\r\nParentImage: C:\\Windows\\System32\\cmd.exe\r\nParentCommandLine: C:\\WINDOWS\\system32\\cmd.exe /d /s /c \"wsl.exe -l -q\"\r\nParentUser: ACER44\\Umar-Farook\"",
+          "version": "5",
+          "systemTime": "2026-09-05T03:39:36.2770917Z",
+          "eventRecordID": "318",
+          "threadID": "13204",
+          "computer": "ACER44",
+          "task": "1",
+          "processID": "25436",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 2,
+      "mail": false,
+      "level": 3,
+      "description": "Suspicious Windows cmd shell execution",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Account Discovery",
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1087",
+          "T1059.003"
+        ],
+        "tactic": [
+          "Discovery",
+          "Execution"
+        ]
+      },
+      "id": "92032"
+    },
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "input": {
+      "type": "log"
+    },
+    "@timestamp": "2026-09-05T03:39:37.237Z",
+    "location": "EventChannel",
+    "id": "1788579577.2437620",
+    "timestamp": "2026-09-05T03:39:37.237+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-09-05T03:39:37.237Z"
+    ],
+    "@timestamp": [
+      "2026-09-05T03:39:37.237Z"
+    ]
+  }
+}

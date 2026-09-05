@@ -1,0 +1,101 @@
+{
+  "_index": "wazuh-alerts-4.x-2026.09.05",
+  "_id": "HSWdb6ABha0DJPFev8oY",
+  "_score": null,
+  "_source": {
+    "input": {
+      "type": "log"
+    },
+    "agent": {
+      "ip": "192.168.0.103",
+      "name": "ACER44",
+      "id": "001"
+    },
+    "manager": {
+      "name": "wazuh-server"
+    },
+    "data": {
+      "win": {
+        "eventdata": {
+          "originalFileName": "Cmd.Exe",
+          "image": "C:\\\\Windows\\\\System32\\\\cmd.exe",
+          "product": "Microsoft® Windows® Operating System",
+          "parentProcessGuid": "{aa922433-2840-6a9a-2b00-000000005200}",
+          "description": "Windows Command Processor",
+          "logonGuid": "{aa922433-7a80-6a9b-5994-f80200000000}",
+          "parentCommandLine": "C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k netsvcs -p -s Schedule",
+          "processGuid": "{aa922433-8cb8-6a9b-1715-000000005200}",
+          "logonId": "0x2f89459",
+          "parentProcessId": "2812",
+          "processId": "25804",
+          "currentDirectory": "C:\\\\WINDOWS\\\\system32\\\\",
+          "utcTime": "2026-09-05 03:30:00.790",
+          "hashes": "MD5=CE396564392FAFAAD5C07A5E2DADE4E6,SHA256=97AC98B1A92C286054CCE55239CFCCDFC23A5517BD07FE693072C9CA96C7DABB,IMPHASH=010B165E4C37F484601D3DBD700C9423",
+          "parentImage": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+          "company": "Microsoft Corporation",
+          "commandLine": "\\\"cmd.exe\\\" /c calc.exe",
+          "integrityLevel": "Medium",
+          "fileVersion": "10.0.26100.9278 (WinBuild.160101.0800)",
+          "user": "ACER44\\\\Umar-Farook",
+          "terminalSessionId": "2",
+          "parentUser": "NT AUTHORITY\\\\SYSTEM"
+        },
+        "system": {
+          "eventID": "1",
+          "keywords": "0x8000000000000000",
+          "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+          "level": "4",
+          "channel": "Microsoft-Windows-Sysmon/Operational",
+          "opcode": "0",
+          "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2026-09-05 03:30:00.790\r\nProcessGuid: {aa922433-8cb8-6a9b-1715-000000005200}\r\nProcessId: 25804\r\nImage: C:\\Windows\\System32\\cmd.exe\r\nFileVersion: 10.0.26100.9278 (WinBuild.160101.0800)\r\nDescription: Windows Command Processor\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: Cmd.Exe\r\nCommandLine: \"cmd.exe\" /c calc.exe\r\nCurrentDirectory: C:\\WINDOWS\\system32\\\r\nUser: ACER44\\Umar-Farook\r\nLogonGuid: {aa922433-7a80-6a9b-5994-f80200000000}\r\nLogonId: 0x2F89459\r\nTerminalSessionId: 2\r\nIntegrityLevel: Medium\r\nHashes: MD5=CE396564392FAFAAD5C07A5E2DADE4E6,SHA256=97AC98B1A92C286054CCE55239CFCCDFC23A5517BD07FE693072C9CA96C7DABB,IMPHASH=010B165E4C37F484601D3DBD700C9423\r\nParentProcessGuid: {aa922433-2840-6a9a-2b00-000000005200}\r\nParentProcessId: 2812\r\nParentImage: C:\\Windows\\System32\\svchost.exe\r\nParentCommandLine: C:\\WINDOWS\\system32\\svchost.exe -k netsvcs -p -s Schedule\r\nParentUser: NT AUTHORITY\\SYSTEM\"",
+          "version": "5",
+          "systemTime": "2026-09-05T03:30:00.8114968Z",
+          "eventRecordID": "245",
+          "threadID": "13204",
+          "computer": "ACER44",
+          "task": "1",
+          "processID": "25436",
+          "severityValue": "INFORMATION",
+          "providerName": "Microsoft-Windows-Sysmon"
+        }
+      }
+    },
+    "rule": {
+      "firedtimes": 1,
+      "mail": false,
+      "level": 4,
+      "description": "Windows command prompt started by an abnormal process",
+      "groups": [
+        "sysmon",
+        "sysmon_eid1_detections",
+        "windows"
+      ],
+      "mitre": {
+        "technique": [
+          "Windows Command Shell"
+        ],
+        "id": [
+          "T1059.003"
+        ],
+        "tactic": [
+          "Execution"
+        ]
+      },
+      "id": "92052"
+    },
+    "location": "EventChannel",
+    "decoder": {
+      "name": "windows_eventchannel"
+    },
+    "id": "1788579001.2420374",
+    "timestamp": "2026-09-05T03:30:01.748+0000"
+  },
+  "fields": {
+    "timestamp": [
+      "2026-09-05T03:30:01.748Z"
+    ]
+  },
+  "sort": [
+    1788579001748
+  ]
+}

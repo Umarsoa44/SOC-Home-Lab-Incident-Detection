@@ -1,0 +1,12 @@
+<!-- SwiftOnSecurity Sysmon Configuration Reference -->
+<Sysmon schemaversion="4.83">
+  <EventFiltering>
+    <!-- Process Creation (Event ID 1) -->
+    <ProcessCreate onmatch="exclude"/>
+    
+    <!-- Process Access / LSASS Dumping (Event ID 10) -->
+    <ProcessAccess onmatch="include">
+      <TargetImage condition="is">lsass.exe</TargetImage>
+    </ProcessAccess>
+  </EventFiltering>
+</Sysmon>

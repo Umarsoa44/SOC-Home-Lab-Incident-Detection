@@ -1,0 +1,26 @@
+title: LSASS Memory Dump via Comsvcs MiniDump
+id: a783b32e-4451-4b12-8e11-9a7c669112bc
+status: experimental
+description: Detects memory dumping of lsass.exe utilizing the legitimate Windows comsvcs.dll export via rundll32
+references:
+  - https://www.ired.team/offensive-security/credential-access-and-dumping/lsass-credential-dumping
+author: Umar Farooq Shaikh
+date: 2026/09/05
+tags:
+  - attack.credential_access
+  - attack.t1003.001
+logsource:
+  category: process_access
+  product: windows
+detection:
+  selection_target:
+    TargetImage|endswith: '\lsass.exe'
+  selection_grant_rights:
+    GrantedAccess|contains:
+      - '0x10ff'
+      - '0x1f3fff'
+      - '0x1410'
+  condition: selection_target and selection_grant_rights
+falsepositives:
+  - Legitimate security software or vulnerability scanners auditing LSASS
+level: high

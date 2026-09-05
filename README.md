@@ -43,40 +43,11 @@ soc-home-lab/
 
 04 - SIEM Correlation & Detection (Configs/sigma_lsass_dump.yml): Incoming events are indexed and parsed against native Wazuh rules and custom Sigma detection logic to surface high-severity alerts.
 
-<table>
-  <thead>
-    <tr>
-      <th>Threat Vector / Simulation</th>
-      <th>MITRE ATT&amp;CK Technique</th>
-      <th>ID</th>
-      <th>Primary Sysmon Telemetry</th>
-      <th>Severity Level</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><b>PowerShell Obfuscation</b></td>
-      <td>Obfuscated Files or Information</td>
-      <td>T1027 / T1059.001</td>
-      <td>Event ID 1 (Process Creation - Long Base64 Strings)</td>
-      <td>Level 3 - 4</td>
-    </tr>
-    <tr>
-      <td><b>Scheduled Task Persistence</b></td>
-      <td>Scheduled Task / Job</td>
-      <td>T1053.005</td>
-      <td>Event ID 1 / Security 4698 (Task Creation XML)</td>
-      <td>Level 4</td>
-    </tr>
-    <tr>
-      <td><b>LSASS Credential Dumping</b></td>
-      <td>OS Credential Dumping: LSASS Memory</td>
-      <td>T1003.001</td>
-      <td>Event ID 10 (Process Access - comsvcs.dll handle)</td>
-      <td>Level 10 - 15</td>
-    </tr>
-  </tbody>
-</table>
+| Threat Vector / Simulation | MITRE ATT&CK Technique | ID | Primary Sysmon Telemetry | Severity Level |
+| :--- | :--- | :--- | :--- | :--- |
+| **PowerShell Obfuscation** | Obfuscated Files or Information | T1027 / T1059.001 | Event ID 1 (Process Creation - Long Base64 Strings) | Level 3 - 4 |
+| **Scheduled Task Persistence** | Scheduled Task / Job | T1053.005 | Event ID 1 / Security 4698 (Task Creation XML) | Level 4 |
+| **LSASS Credential Dumping** | OS Credential Dumping: LSASS Memory | T1003.001 | Event ID 10 (Process Access - comsvcs.dll handle) | Level 10 - 15 |
 
 🔍 Verification & Evidence - 
 
